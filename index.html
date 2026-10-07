@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Учебный интернет-магазин с каталогом товаров, формой заявки и многостраничной навигацией.">
   <title>ShopProject — Главная</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
@@ -10,13 +11,28 @@
 <body>
   <header class="site-header">
     <div class="site-header__inner container">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="../../Загрузки/index.html">ShopProject</a>
+
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="#advantages">Преимущества</a></li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="../../Загрузки/index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="../../Загрузки/index.html#advantages">Преимущества</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="../../Загрузки/index.html#popular">Популярные товары</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="../../Загрузки/index.html#contacts">Обратная связь</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -27,7 +43,11 @@
       <div class="hero__content">
         <p class="hero__eyebrow">Учебный frontend-проект</p>
         <h1 class="hero__title">Учебный интернет-магазин</h1>
-        <p class="hero__text">Многостраничный HTML/CSS-сайт с каталогом товаров, формой заявки, модальным окном и базовой валидацией.</p>
+        <p class="hero__text">
+          Многостраничный HTML/CSS-сайт с каталогом товаров, формой заявки,
+          модальным окном и базовой валидацией.
+        </p>
+
         <div class="hero__actions">
           <a class="button" href="catalog.html">Перейти в каталог</a>
           <a class="button button--secondary" href="#popular">Популярные товары</a>
@@ -61,7 +81,9 @@
             <h3 class="product-card__title">Товар 1</h3>
             <p class="product-card__text">Краткое описание учебного товара.</p>
             <p class="product-card__price">1000 руб.</p>
-            <button class="button product-card__button" type="button" data-product="Товар 1">Заказать</button>
+            <button class="button product-card__button" type="button" data-product="Товар 1">
+              Заказать
+            </button>
           </div>
         </article>
 
@@ -71,7 +93,9 @@
             <h3 class="product-card__title">Товар 2</h3>
             <p class="product-card__text">Краткое описание учебного товара.</p>
             <p class="product-card__price">1500 руб.</p>
-            <button class="button product-card__button" type="button" data-product="Товар 2">Заказать</button>
+            <button class="button product-card__button" type="button" data-product="Товар 2">
+              Заказать
+            </button>
           </div>
         </article>
 
@@ -81,7 +105,9 @@
             <h3 class="product-card__title">Товар 3</h3>
             <p class="product-card__text">Краткое описание учебного товара.</p>
             <p class="product-card__price">2000 руб.</p>
-            <button class="button product-card__button" type="button" data-product="Товар 3">Заказать</button>
+            <button class="button product-card__button" type="button" data-product="Товар 3">
+              Заказать
+            </button>
           </div>
         </article>
       </div>
@@ -89,7 +115,10 @@
 
     <aside class="aside-info container">
       <h2 class="aside-info__title">Информация для студентов</h2>
-      <p class="aside-info__text">Проект объединяет результаты практических работ: структуру HTML, базовые стили, форму заявки, модальное окно, валидацию и CSS-архитектуру.</p>
+      <p class="aside-info__text">
+        Проект объединяет результаты практических работ: структуру HTML,
+        базовые стили, форму заявки, модальное окно, валидацию и CSS-архитектуру.
+      </p>
     </aside>
   </main>
 
@@ -111,17 +140,43 @@
 
       <div class="form-field">
         <label class="form-field__label" for="order-name">Имя</label>
-        <input class="form-field__control" id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
+        <input
+          class="form-field__control"
+          id="order-name"
+          name="name"
+          type="text"
+          placeholder="Введите ваше имя"
+          minlength="2"
+          autocomplete="given-name"
+          required
+        >
       </div>
 
       <div class="form-field">
         <label class="form-field__label" for="order-email">E-mail</label>
-        <input class="form-field__control" id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
+        <input
+          class="form-field__control"
+          id="order-email"
+          name="email"
+          type="email"
+          placeholder="example@mail.ru"
+          autocomplete="email"
+          required
+        >
       </div>
 
       <div class="form-field">
         <label class="form-field__label" for="order-phone">Телефон</label>
-        <input class="form-field__control" id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+        <input
+          class="form-field__control"
+          id="order-phone"
+          name="phone"
+          type="tel"
+          inputmode="tel"
+          placeholder="+7 (900) 000-00-00"
+          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+          required
+        >
         <small class="form-field__hint">Формат: +7 (900) 000-00-00</small>
       </div>
 
@@ -142,12 +197,24 @@
 
       <div class="form-field">
         <label class="form-field__label" for="order-comment">Комментарий</label>
-        <textarea class="form-field__control" id="order-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию"></textarea>
+        <textarea
+          class="form-field__control"
+          id="order-comment"
+          name="comment"
+          rows="4"
+          placeholder="Укажите дополнительную информацию"
+        ></textarea>
       </div>
 
       <div class="form-field form-field--checkbox">
         <label class="checkbox-field">
-          <input class="checkbox-field__control" id="order-agreement" name="agreement" type="checkbox" required>
+          <input
+            class="checkbox-field__control"
+            id="order-agreement"
+            name="agreement"
+            type="checkbox"
+            required
+          >
           <span class="checkbox-field__text">Я согласен на обработку данных</span>
         </label>
       </div>
