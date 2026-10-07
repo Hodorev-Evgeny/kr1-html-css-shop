@@ -58,6 +58,11 @@ img {
     margin-inline: auto;
 }
 
+:target {
+    outline: 2px dashed var(--color-primary);
+    outline-offset: 4px;
+}
+
 /* ===============================
    3. Общие элементы интерфейса
    =============================== */
@@ -115,7 +120,7 @@ textarea:focus-visible {
 }
 
 /* ===============================
-   4. Шапка и навигация — БЭМ
+   4. Шапка и навигация — Flexbox
    =============================== */
 .site-header {
     padding: var(--space-md) 0;
@@ -140,7 +145,9 @@ textarea:focus-visible {
 .site-nav__list {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-sm) var(--space-md);
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -159,8 +166,24 @@ textarea:focus-visible {
 }
 
 /* ===============================
-   5. Главная и общие секции
+   5. Хлебные крошки и общие секции
    =============================== */
+.breadcrumbs {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+    font-size: 14px;
+    color: var(--color-muted);
+}
+
+.breadcrumbs a {
+    color: var(--color-primary);
+}
+
+.breadcrumbs span::before {
+    content: " / ";
+    color: var(--color-muted);
+}
+
 .hero {
     margin-top: var(--space-xl);
     margin-bottom: var(--space-xl);
@@ -249,7 +272,7 @@ textarea:focus-visible {
 }
 
 /* ===============================
-   6. Карточки товаров — Grid + БЭМ
+   6. Карточки товаров — Grid + Flexbox
    =============================== */
 .product-grid {
     display: grid;
@@ -284,20 +307,21 @@ textarea:focus-visible {
     display: flex;
     flex: 1;
     flex-direction: column;
+    gap: var(--space-sm);
     padding: var(--space-md);
 }
 
 .product-card__title {
-    margin: 0 0 var(--space-sm);
+    margin: 0;
 }
 
 .product-card__text {
-    margin: 0 0 var(--space-md);
+    margin: 0;
     color: var(--color-muted);
 }
 
 .product-card__price {
-    margin: auto 0 var(--space-md);
+    margin: auto 0 0;
     font-weight: 700;
 }
 
@@ -306,7 +330,65 @@ textarea:focus-visible {
 }
 
 /* ===============================
-   7. Информационные блоки
+   7. Каталог — Grid "фильтры + товары"
+   =============================== */
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-areas: "filters products";
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.catalog-filters {
+    grid-area: filters;
+    align-self: start;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+}
+
+.catalog-filters__title {
+    margin-top: 0;
+}
+
+.catalog-products {
+    grid-area: products;
+}
+
+.filters-form {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.filters-form fieldset {
+    margin: 0;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+.filters-form legend {
+    font-weight: 700;
+}
+
+.filters-form label {
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.filters-form input[type="number"] {
+    width: 100%;
+    margin-bottom: var(--space-sm);
+    padding: 8px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font: inherit;
+}
+
+/* ===============================
+   8. Информационные блоки
    =============================== */
 .aside-info {
     margin-bottom: var(--space-xl);
@@ -351,7 +433,7 @@ textarea:focus-visible {
 }
 
 /* ===============================
-   8. Форма и модальное окно — БЭМ
+   9. Форма и модальное окно — БЭМ
    =============================== */
 .order-dialog {
     width: min(100% - 32px, 560px);
@@ -444,7 +526,7 @@ textarea:focus-visible {
 }
 
 /* ===============================
-   9. Подвал
+   10. Подвал
    =============================== */
 .site-footer {
     padding: var(--space-lg) 0;
@@ -463,7 +545,7 @@ textarea:focus-visible {
 }
 
 /* ===============================
-   10. Адаптивность (дополнительно)
+   11. Существующая адаптивность проекта
    =============================== */
 @media (max-width: 800px) {
     .site-header__inner,
