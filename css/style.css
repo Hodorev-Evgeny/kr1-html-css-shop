@@ -333,6 +333,13 @@ textarea:focus-visible {
     font-weight: 700;
 }
 
+.product-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: auto;
+}
+
 .product-card__button {
     align-self: flex-start;
 }
@@ -351,6 +358,8 @@ textarea:focus-visible {
 .catalog-filters {
     grid-area: filters;
     align-self: start;
+    position: sticky;
+    top: var(--space-lg);
     padding: var(--space-md);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
@@ -604,5 +613,178 @@ textarea:focus-visible {
 
     .button {
         width: 100%;
+    }
+}
+
+
+/* ===============================
+   12. Подробная карточка товара
+   Самостоятельная доработка
+   =============================== */
+.product-detail {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.product-detail__visual {
+    position: relative;
+}
+
+.product-detail__image {
+    display: grid;
+    place-items: center;
+    min-height: 360px;
+    background-color: var(--color-surface-accent);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    color: var(--color-primary-dark);
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.product-detail__badge {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    z-index: 1;
+    padding: 6px 10px;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+}
+
+.product-detail__content {
+    align-self: center;
+}
+
+.product-detail__eyebrow {
+    margin: 0 0 var(--space-sm);
+    color: var(--color-primary-dark);
+    font-weight: 700;
+}
+
+.product-detail__title {
+    margin: 0 0 var(--space-md);
+}
+
+.product-detail__description {
+    color: var(--color-muted);
+}
+
+.product-detail__features {
+    padding-left: var(--space-lg);
+}
+
+.product-detail__price {
+    margin: var(--space-lg) 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.product-detail__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+/* ===============================
+   13. Расширенная таблица характеристик
+   Самостоятельная доработка
+   =============================== */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-bg);
+}
+
+.product-table caption {
+    margin-bottom: var(--space-sm);
+    font-weight: 700;
+    text-align: left;
+}
+
+.product-table th,
+.product-table td {
+    padding: 12px 14px;
+    border: 1px solid var(--color-border);
+    text-align: left;
+}
+
+.product-table thead {
+    background-color: var(--color-surface-accent);
+}
+
+.product-table tbody tr:hover {
+    background-color: var(--color-surface);
+}
+
+/* ===============================
+   14. Отдельная страница заказа
+   Обязательная часть КР №1
+   =============================== */
+.order-form--page {
+    max-width: 720px;
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-surface);
+}
+
+/* ===============================
+   15. Фиксированная кнопка "Наверх"
+   Самостоятельная доработка
+   =============================== */
+.back-to-top {
+    position: fixed;
+    right: var(--space-lg);
+    bottom: var(--space-lg);
+    z-index: 10;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    color: var(--color-white);
+    background-color: var(--color-primary-dark);
+}
+
+
+@media (max-width: 800px) {
+    .catalog-layout,
+    .product-detail {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+    }
+
+    .catalog-filters {
+        position: static;
+    }
+}
+
+@media (max-width: 560px) {
+    .product-detail__actions,
+    .product-card__actions {
+        flex-direction: column;
+    }
+
+    .back-to-top {
+        right: var(--space-md);
+        bottom: var(--space-md);
     }
 }

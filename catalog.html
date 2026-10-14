@@ -8,11 +8,10 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
-<body>
+<body id="top">
   <header class="site-header">
     <div class="site-header__inner container">
       <a class="site-header__logo" href="index.html">ShopProject</a>
-
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item">
@@ -22,6 +21,12 @@
             <a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
           </li>
           <li class="site-nav__item">
+            <a class="site-nav__link" href="product.html">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заказ</a>
+          </li>
+          <li class="site-nav__item">
             <a class="site-nav__link" href="contacts.html">Контакты</a>
           </li>
           <li class="site-nav__item">
@@ -29,9 +34,6 @@
           </li>
           <li class="site-nav__item">
             <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
           </li>
         </ul>
       </nav>
@@ -101,9 +103,12 @@
               <h3 class="product-card__title">Товар 1</h3>
               <p class="product-card__description">Базовый учебный товар для демонстрации карточки.</p>
               <p class="product-card__price">1000 руб.</p>
-              <button class="button button--primary product-card__button" type="button" data-product="Товар 1">
-                Заказать
-              </button>
+              <div class="product-card__actions">
+                <a class="button button--secondary" href="product.html">Подробнее</a>
+                <button class="button button--primary product-card__button" type="button" data-product="Товар 1">
+                  Заказать
+                </button>
+              </div>
             </div>
           </article>
 
@@ -113,9 +118,12 @@
               <h3 class="product-card__title">Товар 2</h3>
               <p class="product-card__description">Вторая карточка для демонстрации общей сетки.</p>
               <p class="product-card__price">1500 руб.</p>
-              <button class="button button--primary product-card__button" type="button" data-product="Товар 2">
-                Заказать
-              </button>
+              <div class="product-card__actions">
+                <a class="button button--secondary" href="product.html">Подробнее</a>
+                <button class="button button--primary product-card__button" type="button" data-product="Товар 2">
+                  Заказать
+                </button>
+              </div>
             </div>
           </article>
 
@@ -125,9 +133,12 @@
               <h3 class="product-card__title">Товар 3</h3>
               <p class="product-card__description">Третья карточка каталога.</p>
               <p class="product-card__price">2000 руб.</p>
-              <button class="button button--primary product-card__button" type="button" data-product="Товар 3">
-                Заказать
-              </button>
+              <div class="product-card__actions">
+                <a class="button button--secondary" href="product.html">Подробнее</a>
+                <button class="button button--primary product-card__button" type="button" data-product="Товар 3">
+                  Заказать
+                </button>
+              </div>
             </div>
           </article>
 
@@ -137,9 +148,12 @@
               <h3 class="product-card__title">Товар 4</h3>
               <p class="product-card__description">Дополнительный товар для заполнения Grid-сетки.</p>
               <p class="product-card__price">2500 руб.</p>
-              <button class="button button--primary product-card__button" type="button" data-product="Товар 4">
-                Заказать
-              </button>
+              <div class="product-card__actions">
+                <a class="button button--secondary" href="product.html">Подробнее</a>
+                <button class="button button--primary product-card__button" type="button" data-product="Товар 4">
+                  Заказать
+                </button>
+              </div>
             </div>
           </article>
 
@@ -149,9 +163,12 @@
               <h3 class="product-card__title">Товар 5</h3>
               <p class="product-card__description">Дополнительный товар учебного каталога.</p>
               <p class="product-card__price">3000 руб.</p>
-              <button class="button button--primary product-card__button" type="button" data-product="Товар 5">
-                Заказать
-              </button>
+              <div class="product-card__actions">
+                <a class="button button--secondary" href="product.html">Подробнее</a>
+                <button class="button button--primary product-card__button" type="button" data-product="Товар 5">
+                  Заказать
+                </button>
+              </div>
             </div>
           </article>
 
@@ -161,9 +178,12 @@
               <h3 class="product-card__title">Товар 6</h3>
               <p class="product-card__description">Шестая карточка для завершённой сетки.</p>
               <p class="product-card__price">3500 руб.</p>
-              <button class="button button--primary product-card__button" type="button" data-product="Товар 6">
-                Заказать
-              </button>
+              <div class="product-card__actions">
+                <a class="button button--secondary" href="product.html">Подробнее</a>
+                <button class="button button--primary product-card__button" type="button" data-product="Товар 6">
+                  Заказать
+                </button>
+              </div>
             </div>
           </article>
         </div>
@@ -252,5 +272,6 @@
   </dialog>
 
   <p class="success-message container" id="success-message" hidden>Форма успешно отправлена!</p>
+  <a class="back-to-top" href="#top" aria-label="Наверх">↑</a>
 </body>
 </html>

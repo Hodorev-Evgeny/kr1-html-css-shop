@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Подробная карточка учебного товара с характеристиками, ценой и ссылкой на оформление заказа.">
+  <title>Товар — ShopProject</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="site-header__inner container">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="product.html">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заказ</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs container" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current">Товар</span>
+    </nav>
+
+    <section class="product-detail container">
+      <div class="product-detail__visual">
+        <span class="product-detail__badge">Хит</span>
+        <div class="product-detail__image" aria-label="Изображение учебного товара">01</div>
+      </div>
+
+      <div class="product-detail__content">
+        <p class="product-detail__eyebrow">Учебный товар</p>
+        <h1 class="product-detail__title">Товар 1</h1>
+        <p class="product-detail__description">
+          Подробная карточка товара демонстрирует расширенное описание,
+          характеристики, цену, статус наличия и сценарий перехода к оформлению заказа.
+        </p>
+
+        <ul class="product-detail__features">
+          <li>Подходит для демонстрации структуры интернет-магазина</li>
+          <li>Карточка оформлена по БЭМ</li>
+          <li>Характеристики вынесены в отдельную таблицу</li>
+        </ul>
+
+        <p class="product-detail__price">1000 руб.</p>
+
+        <div class="product-detail__actions">
+          <a class="button button--primary" href="order.html">Оформить заказ</a>
+          <a class="button button--secondary" href="catalog.html">Назад в каталог</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="specifications-title">
+      <h2 class="section__title" id="specifications-title">Расширенные характеристики</h2>
+
+      <div class="table-wrapper">
+        <table class="product-table">
+          <caption>Характеристики товара 1</caption>
+          <thead>
+            <tr>
+              <th scope="col">Параметр</th>
+              <th scope="col">Значение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Категория</th>
+              <td>Учебный товар</td>
+            </tr>
+            <tr>
+              <th scope="row">Артикул</th>
+              <td>SP-001</td>
+            </tr>
+            <tr>
+              <th scope="row">Цена</th>
+              <td>1000 руб.</td>
+            </tr>
+            <tr>
+              <th scope="row">Наличие</th>
+              <td>В наличии</td>
+            </tr>
+            <tr>
+              <th scope="row">Материал</th>
+              <td>Демонстрационный</td>
+            </tr>
+            <tr>
+              <th scope="row">Гарантия</th>
+              <td>12 месяцев</td>
+            </tr>
+            <tr>
+              <th scope="row">Доставка</th>
+              <td>1–3 учебных дня</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="aside-info container">
+      <h2 class="aside-info__title">Почему эта страница отдельная?</h2>
+      <p class="aside-info__text">
+        Пользователь получает больше информации о товаре, не перегружая каталог.
+        Это улучшает структуру многостраничного сайта.
+      </p>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      <p class="site-footer__text">&copy; 2026 Учебный проект.</p>
+      <a class="site-footer__link" href="catalog.html">Каталог</a>
+    </div>
+  </footer>
+
+  <a class="back-to-top" href="#top" aria-label="Наверх">↑</a>
+</body>
+</html>
