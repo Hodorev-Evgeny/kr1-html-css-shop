@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Учебный интернет-магазин с каталогом товаров, формой заявки и многостраничной навигацией.">
-  <title>ShopProject — Главная</title>
+  <title>Главная — ShopProject</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
@@ -49,7 +49,7 @@
         </p>
 
         <div class="hero__actions">
-          <a class="button" href="catalog.html">Перейти в каталог</a>
+          <a class="button button--primary" href="catalog.html">Перейти в каталог</a>
           <a class="button button--secondary" href="#popular">Популярные товары</a>
         </div>
       </div>
@@ -74,14 +74,14 @@
         <a class="section__link" href="catalog.html">Весь каталог →</a>
       </div>
 
-      <div class="product-grid">
-        <article class="product-card">
+      <div class="products-grid">
+        <article class="product-card product-card--featured">
           <div class="product-card__image" aria-hidden="true">01</div>
           <div class="product-card__body">
             <h3 class="product-card__title">Товар 1</h3>
-            <p class="product-card__text">Краткое описание учебного товара.</p>
+            <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">1000 руб.</p>
-            <button class="button product-card__button" type="button" data-product="Товар 1">
+            <button class="button button--primary product-card__button" type="button" data-product="Товар 1">
               Заказать
             </button>
           </div>
@@ -91,9 +91,9 @@
           <div class="product-card__image" aria-hidden="true">02</div>
           <div class="product-card__body">
             <h3 class="product-card__title">Товар 2</h3>
-            <p class="product-card__text">Краткое описание учебного товара.</p>
+            <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">1500 руб.</p>
-            <button class="button product-card__button" type="button" data-product="Товар 2">
+            <button class="button button--primary product-card__button" type="button" data-product="Товар 2">
               Заказать
             </button>
           </div>
@@ -103,9 +103,9 @@
           <div class="product-card__image" aria-hidden="true">03</div>
           <div class="product-card__body">
             <h3 class="product-card__title">Товар 3</h3>
-            <p class="product-card__text">Краткое описание учебного товара.</p>
+            <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">2000 руб.</p>
-            <button class="button product-card__button" type="button" data-product="Товар 3">
+            <button class="button button--primary product-card__button" type="button" data-product="Товар 3">
               Заказать
             </button>
           </div>
@@ -138,10 +138,9 @@
     <form class="order-form" id="order-form" action="#" method="post" novalidate>
       <input id="selected-product" name="selected-product" type="hidden">
 
-      <div class="form-field">
-        <label class="form-field__label" for="order-name">Имя</label>
-        <input
-          class="form-field__control"
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-name">Имя</label>
+        <input class="order-form__input"
           id="order-name"
           name="name"
           type="text"
@@ -152,10 +151,9 @@
         >
       </div>
 
-      <div class="form-field">
-        <label class="form-field__label" for="order-email">E-mail</label>
-        <input
-          class="form-field__control"
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-email">E-mail</label>
+        <input class="order-form__input"
           id="order-email"
           name="email"
           type="email"
@@ -165,10 +163,9 @@
         >
       </div>
 
-      <div class="form-field">
-        <label class="form-field__label" for="order-phone">Телефон</label>
-        <input
-          class="form-field__control"
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-phone">Телефон</label>
+        <input class="order-form__input"
           id="order-phone"
           name="phone"
           type="tel"
@@ -177,17 +174,17 @@
           pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
           required
         >
-        <small class="form-field__hint">Формат: +7 (900) 000-00-00</small>
+        <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
       </div>
 
-      <div class="form-field">
-        <label class="form-field__label" for="order-date">Дата связи</label>
-        <input class="form-field__control" id="order-date" name="date" type="date">
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-date">Дата связи</label>
+        <input class="order-form__input" id="order-date" name="date" type="date">
       </div>
 
-      <div class="form-field">
-        <label class="form-field__label" for="order-topic">Тема заявки</label>
-        <select class="form-field__control" id="order-topic" name="topic" required>
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-topic">Тема заявки</label>
+        <select class="order-form__select" id="order-topic" name="topic" required>
           <option value="">Выберите тему</option>
           <option value="product">Заказ товара</option>
           <option value="consultation">Консультация</option>
@@ -195,10 +192,10 @@
         </select>
       </div>
 
-      <div class="form-field">
-        <label class="form-field__label" for="order-comment">Комментарий</label>
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-comment">Комментарий</label>
         <textarea
-          class="form-field__control"
+          class="order-form__textarea"
           id="order-comment"
           name="comment"
           rows="4"
@@ -206,22 +203,22 @@
         ></textarea>
       </div>
 
-      <div class="form-field form-field--checkbox">
-        <label class="checkbox-field">
+      <div class="order-form__field order-form__field--checkbox">
+        <label class="order-form__checkbox">
           <input
-            class="checkbox-field__control"
+            class="order-form__checkbox-control"
             id="order-agreement"
             name="agreement"
             type="checkbox"
             required
           >
-          <span class="checkbox-field__text">Я согласен на обработку данных</span>
+          <span class="order-form__checkbox-text">Я согласен на обработку данных</span>
         </label>
       </div>
 
-      <div class="form-actions">
+      <div class="order-form__actions">
         <button class="button button--secondary" type="button" data-close-dialog>Закрыть</button>
-        <button class="button" type="submit">Отправить заявку</button>
+        <button class="button button--primary" type="submit">Отправить заявку</button>
       </div>
     </form>
   </dialog>

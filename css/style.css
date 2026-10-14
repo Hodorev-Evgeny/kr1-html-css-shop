@@ -89,16 +89,20 @@ textarea:focus-visible {
     justify-content: center;
     min-height: 42px;
     padding: var(--space-sm) var(--space-md);
-    color: var(--color-white);
-    background-color: var(--color-primary);
     text-decoration: none;
-    border: 1px solid var(--color-primary);
+    border: 1px solid transparent;
     border-radius: var(--radius-sm);
     cursor: pointer;
     font: inherit;
 }
 
-.button:hover {
+.button--primary {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.button--primary:hover {
     color: var(--color-white);
     background-color: var(--color-primary-dark);
     border-color: var(--color-primary-dark);
@@ -175,11 +179,11 @@ textarea:focus-visible {
     color: var(--color-muted);
 }
 
-.breadcrumbs a {
+.breadcrumbs__link {
     color: var(--color-primary);
 }
 
-.breadcrumbs span::before {
+.breadcrumbs__current::before {
     content: " / ";
     color: var(--color-muted);
 }
@@ -274,7 +278,7 @@ textarea:focus-visible {
 /* ===============================
    6. Карточки товаров — Grid + Flexbox
    =============================== */
-.product-grid {
+.products-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-md);
@@ -290,6 +294,10 @@ textarea:focus-visible {
 }
 
 .product-card:hover {
+    border-color: var(--color-primary);
+}
+
+.product-card--featured {
     border-color: var(--color-primary);
 }
 
@@ -315,7 +323,7 @@ textarea:focus-visible {
     margin: 0;
 }
 
-.product-card__text {
+.product-card__description {
     margin: 0;
     color: var(--color-muted);
 }
@@ -468,16 +476,18 @@ textarea:focus-visible {
     font-size: 1.5rem;
 }
 
-.form-field {
+.order-form__field {
     margin-bottom: var(--space-md);
 }
 
-.form-field__label {
+.order-form__label {
     display: block;
     margin-bottom: var(--space-xs);
 }
 
-.form-field__control {
+.order-form__input,
+.order-form__select,
+.order-form__textarea {
     width: 100%;
     padding: 10px 12px;
     border: 1px solid var(--color-border);
@@ -485,23 +495,25 @@ textarea:focus-visible {
     font: inherit;
 }
 
-.form-field__control:hover {
+.order-form__input:hover,
+.order-form__select:hover,
+.order-form__textarea:hover {
     border-color: var(--color-primary);
 }
 
-.form-field__hint {
+.order-form__hint {
     display: block;
     margin-top: var(--space-xs);
     color: var(--color-muted);
 }
 
-.checkbox-field {
+.order-form__checkbox {
     display: flex;
     align-items: flex-start;
     gap: var(--space-sm);
 }
 
-.checkbox-field__control {
+.order-form__checkbox-control {
     width: auto;
     margin-top: 0.25em;
 }
@@ -510,7 +522,7 @@ textarea:focus-visible {
     border-color: var(--color-danger);
 }
 
-.form-actions {
+.order-form__actions {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
@@ -523,6 +535,14 @@ textarea:focus-visible {
     padding: var(--space-md);
     border-left: 4px solid var(--color-success);
     background-color: var(--color-success-bg);
+}
+
+
+.order-form__input:focus-visible,
+.order-form__select:focus-visible,
+.order-form__textarea:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
 }
 
 /* ===============================
@@ -555,7 +575,7 @@ textarea:focus-visible {
         flex-direction: column;
     }
 
-    .product-grid,
+    .products-grid,
     .info-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -572,13 +592,13 @@ textarea:focus-visible {
     }
 
     .advantages,
-    .product-grid,
+    .products-grid,
     .info-grid {
         grid-template-columns: 1fr;
     }
 
     .hero__actions,
-    .form-actions {
+    .order-form__actions {
         flex-direction: column;
     }
 
